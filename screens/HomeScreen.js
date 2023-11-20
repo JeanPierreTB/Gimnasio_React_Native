@@ -1,11 +1,25 @@
 import React, {useEffect} from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import { fetchAll as fecthExercises } from '../services/ExerciseService';
+import { fetchAll as fecthBodyParts } from '../services/BodyPartService';
 
 const HomeScreen = ({ navigation }) => {
   useEffect(() => {
-    console.log('XD');
-    alert('XD');
-  });
+    fecthExercises()
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error en la solicitud Listar Ejercicios:', error);
+      });
+    fecthBodyParts()
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error en la solicitud Listar Partes del Cuerpo:', error);
+      });
+  }, []);
 
   return (
     <View style={styles.container}>
