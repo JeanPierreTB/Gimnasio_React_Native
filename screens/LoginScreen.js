@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import { BASE_URL } from '../configs/constants';
 
 const HomeScreen = ({ navigation }) => {
   useEffect(() => {
@@ -8,7 +9,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text>¡Bienvenido a la pantalla de inicio! </Text>
+      <Text>¡Bienvenido a la pantalla de inicio! {BASE_URL}</Text>
       <Button
         title="Ir a Home"
         onPress={() => navigation.navigate('Home')}

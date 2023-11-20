@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 const HomeScreen = ({ navigation }) => {
   useEffect(() => {
     console.log('XD');
-    console.log('XD');
+    alert('XD');
   });
 
   return (
