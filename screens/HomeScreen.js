@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { BASE_URL } from '../configs/constants';
+import { View, Text, StyleSheet, Button, FlatList, Image, TouchableOpacity } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { fetchAll as fecthExercises } from '../services/ExerciseService';
 import { fetchAll as fecthBodyParts } from '../services/BodyPartService';
@@ -71,10 +72,53 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const styles = StyleSheet.create({
-    container: {
+    
+  });
+
+  const exerciseClick = (exerciseId) => {
+    navigation.navigate('DetailExercise', {
+      exerciseId: exerciseId
+    });
+    // Coloca aquí la lógica que deseas ejecutar al hacer clic en la imagen
+  };
+
+  const renderItem = ({ item }) => {
+    console.log('++++++++++++++++++++++++++++++')
+    console.log(BASE_URL + item.image_url)
+    return (
+      <View style={stylesFlatList.item}>
+        <TouchableOpacity onPress={() => exerciseClick(item.id)}>
+          <Image
+            style={stylesFlatList.image}
+            source={{ uri: BASE_URL + item.image_url }}
+            resizeMode="cover"
+          />
+          <Text style={stylesFlatList.title}>{item.name}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  const stylesFlatList = StyleSheet.create({
+    item: {
       flex: 1,
+      margin: 5,
+      height: 150,
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: '#f0f0f0',
+      borderRadius: 8,
+      padding: 10,
+    },
+    image: {
+      width: '20px',
+      height: '20px',
+      borderRadius: 8,
+    },
+    title: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      marginTop: 5,
     },
   });
 
@@ -87,6 +131,12 @@ const HomeScreen = ({ navigation }) => {
         onValueChange={(bodyPartId) => bodyPartSelected(bodyPartId)}
         items={bodyParts}
       />
+      <FlatList
+        data={exercises}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        numColumns={3} // Número de columnas
+      />
       <Button
         title="Ir a Login"
         onPress={() => navigation.navigate('Login')}
@@ -96,11 +146,7 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+
 });
 
 export default HomeScreen;
