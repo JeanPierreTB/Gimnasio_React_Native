@@ -14,6 +14,10 @@ const HomeScreen = ({ navigation }) => {
         title="Ir a Home"
         onPress={() => navigation.navigate('Home')}
       />
+      <Button
+        title="Ir a Reset Password"
+        onPress={() => navigation.navigate('ResetPassword')}
+      />
     </View>
   );
 };

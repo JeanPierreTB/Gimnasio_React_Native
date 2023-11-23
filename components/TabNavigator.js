@@ -21,7 +21,7 @@ const TabNavigator = () => {
             } else if (route.name === 'Demo') {
               iconName = 'badge-account';
             } else if (route.name === 'Map') {
-              iconName = 'map';
+              iconName = 'alien-outline';
             }
             return <Icon
               name={iconName}
@@ -37,7 +37,8 @@ const TabNavigator = () => {
         }} />
       <Tab.Screen 
         name="Demo" 
-        component={DemoScreen}options={{
+        component={DemoScreen}
+        options={{
           title: 'Demo',
         }}  />
       <Tab.Screen 
