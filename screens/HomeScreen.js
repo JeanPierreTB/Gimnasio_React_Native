@@ -92,6 +92,7 @@ const HomeScreen = ({ navigation }) => {
             style={stylesFlatList.image}
             source={{ uri: BASE_URL + item.image_url }}
             resizeMode="cover"
+            onError={(err) => console.log(err)}
           />
           <Text style={stylesFlatList.title}>{item.name}</Text>
         </TouchableOpacity>
@@ -111,8 +112,8 @@ const HomeScreen = ({ navigation }) => {
       padding: 10,
     },
     image: {
-      width: '20px',
-      height: '20px',
+      width: 100,
+      height: 100,
       borderRadius: 8,
     },
     title: {
