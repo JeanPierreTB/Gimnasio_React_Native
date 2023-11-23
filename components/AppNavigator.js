@@ -15,7 +15,8 @@ const AppNavigator = () => {
         initialRouteName="Login">
         <Stack.Screen 
           name="Home" 
-          component={HomeScreen} />
+          component={HomeScreen} 
+          options={{ title: 'Home' }} />
         <Stack.Screen 
           name="Login" 
           component={LoginScreen} />

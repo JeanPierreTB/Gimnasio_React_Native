@@ -22,7 +22,8 @@
     "react-native-reanimated": "^3.5.4",
     "react-native-screens": "^3.27.0",
     "react-native-vector-icons": "^10.0.2",
-    "react-native-webview": "13.2.2"
+    "react-native-webview": "13.2.2",
+    "expo-location": "~16.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

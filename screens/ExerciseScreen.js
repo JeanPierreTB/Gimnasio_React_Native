@@ -83,8 +83,8 @@ const ExerciseScreen = ({ navigation }) => {
   };
 
   const renderItem = ({ item }) => {
-    console.log('++++++++++++++++++++++++++++++')
-    console.log(BASE_URL + item.image_url)
+    //console.log('++++++++++++++++++++++++++++++')
+    //console.log(BASE_URL + item.image_url)
     return (
       <View style={stylesFlatList.item}>
         <TouchableOpacity onPress={() => exerciseClick(item.id)}>
