@@ -5,7 +5,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import DetailExerciseScreen from '../screens/DetailExerciseScreen';
-import TabNavigator from './TabNavigator';
 
 const Stack = createStackNavigator();
 

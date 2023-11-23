@@ -125,7 +125,7 @@ const ExerciseScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text>Exercise</Text>
+      {/*<Text>Exercise</Text>*/}
       <RNPickerSelect
         placeholder={{ label: 'Seleccionar una parte del cuerpo', value: null }} 
         style={pickerSelectStyles}
