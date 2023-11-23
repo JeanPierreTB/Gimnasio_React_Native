@@ -27,13 +27,12 @@ const MapScreen = ({ }) => {
       let location = await Location.getCurrentPositionAsync({});
       console.log(location.coords);
       setLocation(location);
-      setInitialRegion({
-        latitude: location.latitude,
-        longitude: location.longitude,
+      let newInitialRegion = {
+        latitude: -12.0464,
+        longitude: -77.0428,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
-      });
-      console.log(initialRegion)
+      }
     })();
   }, []);
 
