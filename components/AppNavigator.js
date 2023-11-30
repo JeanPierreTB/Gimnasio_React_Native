@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import DetailExerciseScreen from '../screens/DetailExerciseScreen';
 import ResetPasswordScreen from '../screens/ResetPasswordScreen';
+import CameraScreen from '../screens/CameraScreen';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,10 @@ const AppNavigator = () => {
           name="ResetPassword" 
           component={ResetPasswordScreen} 
           options={{ title: 'Cambiar Contraseña' }} />
+        <Stack.Screen 
+          name="Camera" 
+          component={CameraScreen} 
+          options={{ title: 'Prueba de cámara' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

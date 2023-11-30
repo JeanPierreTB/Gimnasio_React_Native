@@ -21,20 +21,19 @@ const HomeScreen = ({ navigation }) => {
         style={styles.input}
         placeholder="Id del Usuario"
         onChangeText={text => setUserId(text)}
-        value={userId}
-      />
+        value={userId} />
       <Button
         title="Ingresar"
-        onPress={access}
-      />
+        onPress={access} />
       <Button
         title="Ir a Home"
-        onPress={() => navigation.navigate('Home')}
-      />
+        onPress={() => navigation.navigate('Home')} />
       <Button
         title="Ir a Reset Password"
-        onPress={() => navigation.navigate('ResetPassword')}
-      />
+        onPress={() => navigation.navigate('ResetPassword')} />
+      <Button
+        title="Ir a Cámara"
+        onPress={() => navigation.navigate('Camera')} />
     </View>
   );
 };
