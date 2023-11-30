@@ -31,8 +31,8 @@ export const fetchExercisesBodyPartsCount = (memberId = null) => {
   });
 }
 
-export const fetchExercises = (memberId = null) => {
-  const url = BASE_URL + 'member/exercises' + (memberId != null ? '?member_id=' + memberId : '');
+export const fetchExercises = (memberId = null, bodyPartId = null) => {
+  const url = BASE_URL + 'member/exercises' + (memberId != null ? '?member_id=' + memberId : '') + (bodyPartId != null ? '&body_part_id=' + bodyPartId : '');
   // console.log(url);
   return new Promise((resolve, reject) => {
     axios.get(url)

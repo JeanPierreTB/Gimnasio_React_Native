@@ -4,6 +4,7 @@ import ExerciseScreen from '../screens/ExerciseScreen';
 import DemoScreen from '../screens/DemoScreen';
 import MapScreen from '../screens/MapScreen';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import RoutineScreen from '../screens/RoutineScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,6 +23,8 @@ const TabNavigator = () => {
               iconName = 'badge-account';
             } else if (route.name === 'Map') {
               iconName = 'alien-outline';
+            } else if (route.name === 'Routine') {
+              iconName = 'billboard';
             }
             return <Icon
               name={iconName}
@@ -40,6 +43,12 @@ const TabNavigator = () => {
         component={DemoScreen}
         options={{
           title: 'Demo',
+        }}  />
+      <Tab.Screen 
+        name="Routine" 
+        component={RoutineScreen}
+        options={{
+          title: 'Mi Rutina',
         }}  />
       <Tab.Screen 
         name="Map" 
