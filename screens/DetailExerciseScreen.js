@@ -27,6 +27,7 @@ const DetailExerciseScreen = () => {
     findById(exerciseId)
       .then(data => {
         //console.log(data);
+        data.video_url = data.video_url.split('=')[1];
         setExercise(data);
       })
       .catch(error => {
@@ -46,8 +47,7 @@ const DetailExerciseScreen = () => {
       <WebView
         javaScriptEnabled={true}
         domStorageEnabled={false}
-        source={{ uri: exercise.video_url}} // Reemplaza 'VIDEO_ID' con el ID del video de YouTube
-      />
+        source={{ uri: `https://www.youtube.com/embed/${exercise.video_url}?rel=0&autoplay=0&showinfo=0&controls=0`}} />
     </>
   );
 };
