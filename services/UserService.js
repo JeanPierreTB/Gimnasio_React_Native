@@ -16,3 +16,20 @@ export const resetPassword = (dni, email) => {
       });
   });
 }
+
+export const login=(user,password)=>{
+  const url=BASE_URL + 'user/validate';
+  console.log(url);
+  const data={user:user,password:password}
+  console.log("Datos para el usuario:",data);
+  return new Promise((resolve,reject)=>{
+    axios.post(url,data)
+      .then(response=>{
+        resolve(response.data);
+      })
+      .catch(error=>{
+        console.error(error.stack);
+        reject(error);
+      })
+  })
+}

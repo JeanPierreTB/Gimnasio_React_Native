@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://192.168.1.24:3000/';
+export const BASE_URL = 'https://movilgrupo3-backend2.adriulima.repl.co/';
